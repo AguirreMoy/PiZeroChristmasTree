@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#mine
+VideoPrep/*.jpg
+VideoPrep/**/*.jpg
