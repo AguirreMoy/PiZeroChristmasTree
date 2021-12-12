@@ -5,9 +5,9 @@ import glob
 from natsort import natsorted
 import json
 # All files ending with .txt
-img_list = natsorted(glob.glob("C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPrep/ZedsDead/*.jpg"))
+img_list = natsorted(glob.glob("C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPrep/ZedDoit/*.jpg"))
 
-output_file_path = "C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPrep/zedsdead.json"
+output_file_path = "C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPrep/zeddoit.json"
 
 data = {}
 
