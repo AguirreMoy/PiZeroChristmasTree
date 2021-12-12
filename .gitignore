@@ -131,3 +131,5 @@ dmypy.json
 #mine
 VideoPrep/*.jpg
 VideoPrep/**/*.jpg
+VideoPrep/*.mp4
+VideoPrep/**/*.mp4
