@@ -14,6 +14,6 @@ for i in playData:
     for count, i in enumerate(frame_data):
         color_data = frame_data[i]
         print(i, frame_data[i])
-#        strip.setPixelColor(count, Color(color_data[0],color_data[1], color_data[3]))
+#        strip.setPixelColor(count, Color(color_data[1],color_data[0], color_data[2]))
 #    strip.show()
     time.sleep(time_delay - ((time.time() - starttime) % time_delay))
