@@ -12,7 +12,7 @@ output_file_path = "C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPre
 data = {}
 
 NUM_LED = 100
-
+ROWBLANK = range(0,6)
 ROW1 = range(6,26)
 ROW2 = range(26,46)
 ROW3 = range(46,61)
@@ -30,25 +30,26 @@ for count, img_path in enumerate(img_list):
 
     mean_color = np.mean(blocks, axis=(2, 3, 4))
     my_dict = {}
-
+    for led_count, i in enumerate(ROWBLANK):
+        my_dict["LED" + str(i)] = [0,0,0]
     for led_count, i in enumerate(ROW1):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[3][int(led_count/len(ROW1)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[11][int(led_count/len(ROW1)*15)].tolist()
     for led_count, i in enumerate(ROW2):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[4][int(led_count/len(ROW2)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[10][int(led_count/len(ROW2)*15)].tolist()
     for led_count, i in enumerate(ROW3):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[5][int(led_count/len(ROW3)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[9][int(led_count/len(ROW3)*15)].tolist()
     for led_count, i in enumerate(ROW4):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[6][int(led_count/len(ROW4)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[8][int(led_count/len(ROW4)*15)].tolist()
     for led_count, i in enumerate(ROW5):
         my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[7][int(led_count/len(ROW5)*15)].tolist()
     for led_count, i in enumerate(ROW6):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[8][int(led_count/len(ROW6)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[6][int(led_count/len(ROW6)*15)].tolist()
     for led_count, i in enumerate(ROW7):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[9][int(led_count/len(ROW7)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[5][int(led_count/len(ROW7)*15)].tolist()
     for led_count, i in enumerate(ROW8):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[10][int(led_count/len(ROW8)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[4][int(led_count/len(ROW8)*15)].tolist()
     for led_count, i in enumerate(ROW9):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[11][int(led_count/len(ROW9)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[3][int(led_count/len(ROW9)*15)].tolist()
 
 
     #fig, ax = plt.subplots()

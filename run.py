@@ -8,6 +8,9 @@
 # various animations on a strip of NeoPixels.
  
 import time
+import glob
+from pick import pick
+from natsort import natsorted
 from rpi_ws281x import *
 import argparse
  
@@ -20,7 +23,6 @@ LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
 LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
- 
  
 
 
@@ -49,8 +51,9 @@ if __name__ == '__main__':
 
             time_delay = 0.1
 
-
-            file_name = "porter.json"
+            json_list = natsorted(glob.glob("./json_files/*.json"))
+            option, _ = pick(json_list, "Select file to play: ")
+            file_name = option
             f = open(file_name, 'r')
             playData = json.load(f)
             print("playing in 3 seconds")
