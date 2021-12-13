@@ -106,24 +106,24 @@ if __name__ == '__main__':
  
     try:
         for i in ROW1:
-        strip.setPixelColor(i, Color(127, 127, 127))
+            strip.setPixelColor(i, Color(127, 127, 127))
         for i in ROW2:
-        strip.setPixelColor(i, Color(127, 0, 0))
+            strip.setPixelColor(i, Color(127, 0, 0))
         for i in ROW3:
-        strip.setPixelColor(i, Color(0, 127, 0))
+            strip.setPixelColor(i, Color(0, 127, 0))
         for i in ROW4:
-        strip.setPixelColor(i, Color(0, 0, 127))
+            strip.setPixelColor(i, Color(0, 0, 127))
         for i in ROW5:
-        strip.setPixelColor(i, Color(127, 127, 127))
+            strip.setPixelColor(i, Color(127, 127, 127))
         for i in ROW6:
-        strip.setPixelColor(i, Color(127, 0, 0))
+            strip.setPixelColor(i, Color(127, 0, 0))
         for i in ROW7:
-        strip.setPixelColor(i, Color(0, 127, 0))
+            strip.setPixelColor(i, Color(0, 127, 0))
         for i in ROW8:
-        strip.setPixelColor(i, Color(0, 0, 127))
+            strip.setPixelColor(i, Color(0, 0, 127))
         for i in ROW9:
-        strip.setPixelColor(i, Color(127, 127, 127))
-
+            strip.setPixelColor(i, Color(127, 127, 127))
+        strip.show()
         # while True:
         #     print ('Color wipe animations.')
         #     colorWipe(strip, Color(255, 0, 0))  # Red wipe
