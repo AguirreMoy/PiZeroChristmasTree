@@ -5,9 +5,9 @@ import glob
 from natsort import natsorted
 import json
 # All files ending with .txt
-img_list = natsorted(glob.glob("C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPrep/Porter/*.jpg"))
+img_list = natsorted(glob.glob("C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPrep/tennis_courts/*.jpg"))
 
-output_file_path = "C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/VideoPrep/porter.json"
+output_file_path = "C:/Users/Aguir/Documents/GitHub/PiZeroCHristmasTree/json_files/flume_tennis_courts.json"
 
 data = {}
 
@@ -49,7 +49,7 @@ for count, img_path in enumerate(img_list):
     for led_count, i in enumerate(ROW8):
         my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[4][int(led_count/len(ROW8)*15)].tolist()
     for led_count, i in enumerate(ROW9):
-        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[3][int(led_count/len(ROW9)*15)].tolist()
+        my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[3][7].tolist()
 
 
     #fig, ax = plt.subplots()
