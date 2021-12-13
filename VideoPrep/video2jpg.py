@@ -23,4 +23,4 @@ if __name__=="__main__":
     args = a.parse_args()
     print(args)
     #extractImages(args.pathIn, args.pathOut)
-    extractImages("C:/Users/Aguir/Documents/GitHub/PiZeroChristmasTree/VideoPrep/tennis_courts.mp4", "C:/Users/Aguir/Documents/GitHub/PiZeroChristmasTree/VideoPrep/tennis_courts/")
+    extractImages("C:/Users/Aguir/Documents/GitHub/PiZeroChristmasTree/VideoPrep/zed_doit.mp4", "C:/Users/Aguir/Documents/GitHub/PiZeroChristmasTree/VideoPrep/Mariah/")
