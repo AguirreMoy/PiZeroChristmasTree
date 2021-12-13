@@ -13,6 +13,11 @@ data = {}
 
 NUM_LED = 50
 
+Row1_LEDS = 16
+Row2_LEDS = 12
+Row3_LEDS = 10
+Row4_LEDS = 8
+Row5_LEDS = 4
 
 for count, img_path in enumerate(img_list):
     img_data = io.imread(img_path)
@@ -23,7 +28,11 @@ for count, img_path in enumerate(img_list):
     for i in range(NUM_LED):
         my_dict["LED" + str(i)] = mean_color.astype(np.uint8)[7][7].tolist()
 
+    fig, ax = plt.subplots()
+    ax.imshow(mean_color.astype(np.uint8)) 
+    plt.show()
     data['frame' + str(count)] = my_dict
+
 
 with open(output_file_path, 'w') as fout:
     json.dump(data, fout, sort_keys=False, indent=4)
