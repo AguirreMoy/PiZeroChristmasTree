@@ -62,7 +62,11 @@ def wheel(pos):
 
 def fire_wheel(pos):
     """Generate rainbow colors across 0-255 positions."""
-    return Color(255 - pos , pos, 0)
+    if pos < 170:
+        return Color(255 - pos , pos, 0)
+    else:
+        pos -= 170
+        return Color(pos , 255 - pos, 0)
 
 def fireCycle(strip, wait_ms=20, iterations=5):
     """Draw rainbow that uniformly distributes itself across all pixels."""
