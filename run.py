@@ -1,12 +1,8 @@
-#hail mary before bed
-
 #!/usr/bin/env python3
-# rpi_ws281x library strandtest example
-# Author: Tony DiCola (tony@tonydicola.com)
+# playback python in .json
+# Author: Moises Aguirre (aguirre.moy@gmail.com)
 #
-# Direct port of the Arduino NeoPixel library strandtest example.  Showcases
-# various animations on a strip of NeoPixels.
- 
+
 import time
 import glob
 from pick import pick
@@ -23,7 +19,9 @@ LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
 LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
- 
+
+#Playback configuration
+TIME_DELAY = 0.1 #Wait 100 ms per frame
 
 
 # Main program logic follows:
@@ -49,7 +47,6 @@ if __name__ == '__main__':
             import time
             starttime = time.time()
 
-            time_delay = 0.1
 
             json_list = natsorted(glob.glob("./json_files/*.json"))
             option, _ = pick(json_list, "Select file to play: ")
@@ -65,7 +62,7 @@ if __name__ == '__main__':
                     #print(i, frame_data[i])
                     strip.setPixelColor(count, Color(color_data[1],color_data[0], color_data[2]))
                 strip.show()
-                time.sleep(time_delay - ((time.time() - starttime) % time_delay))
+                time.sleep(TIME_DELAY - ((time.time() - starttime) % TIME_DELAY))
 
     except KeyboardInterrupt:
         if args.clear:
